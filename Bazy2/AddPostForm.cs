@@ -15,7 +15,6 @@ namespace Bazy2
         public AddPostForm()
         {
             InitializeComponent();
-            this.Load += AddPostForm_Load;
         }
         private void AddPostForm_Load(object sender, EventArgs e)
         {
@@ -72,7 +71,11 @@ namespace Bazy2
             DestroyHandle();
 
         }
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            DestroyHandle();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -90,10 +93,6 @@ namespace Bazy2
 
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Hide();
-            DestroyHandle();
-        }
+
     }
 }
