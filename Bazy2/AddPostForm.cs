@@ -12,41 +12,38 @@ namespace Bazy2
 {
     public partial class AddPostForm : Form
     {
+        private BlogContext _context;
+
         public AddPostForm()
         {
             InitializeComponent();
+            _context = new BlogContext();
         }
         private void AddPostForm_Load(object sender, EventArgs e)
         {
             comboBox1.Items.Add("Choose a blog...");
             comboBox1.SelectedItem = comboBox1.Items[0];
-            using (var bContext = new BlogContext())
-            {
-                var blogs = from b in bContext.Blogs
+            var blogs = from b in _context.Blogs
                             orderby b.Name
                             select b.Name;
-                foreach (var blog in blogs)
-                {
-                    comboBox1.Items.Add(blog);
-                }
+            foreach (var blog in blogs)
+            {
+                comboBox1.Items.Add(blog);
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void add_Click(object sender, EventArgs e)
         {
 
             var selectedBlog = (string)comboBox1.SelectedItem;
             int blogId;
-
-            using (var bContext = new BlogContext())
+            
+            blogId = (from b in _context.Blogs where b.Name == selectedBlog select b.BlogId).FirstOrDefault();
+            if (blogId == 0)
             {
-                blogId = (from b in bContext.Blogs where b.Name == selectedBlog select b.BlogId).FirstOrDefault();
-                if (blogId == 0)
-                {
-                    MessageBox.Show("No blog selected.");
-                    return;
-                }
+                MessageBox.Show("No blog selected.");
+                return;
             }
             if (textBox1.Text == "")
             {
@@ -62,37 +59,16 @@ namespace Bazy2
             post.BlogId = blogId;
             post.Content = richTextBox1.Text;
             post.Title = textBox1.Text;
-            using (var bContext = new BlogContext())
-            {
-                bContext.Posts.Add(post);
-                bContext.SaveChanges();
-            }
+            _context.Posts.Add(post);
+            _context.SaveChanges();
             Hide();
             DestroyHandle();
 
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void cancel_Click(object sender, EventArgs e)
         {
             Hide();
             DestroyHandle();
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
     }
 }

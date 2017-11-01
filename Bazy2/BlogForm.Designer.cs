@@ -29,22 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlogForm));
-            this.blogBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.blogBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.blogDataGridView = new System.Windows.Forms.DataGridView();
             this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postsDataGridView = new System.Windows.Forms.DataGridView();
-            this.addPost = new System.Windows.Forms.Button();
+            this.addPostButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.getAllPostsButton = new System.Windows.Forms.Button();
+            this.postLabel = new System.Windows.Forms.Label();
+            this.getBlogPostsButton = new System.Windows.Forms.Button();
+            this.blogLabel = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,117 +45,13 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.blogBindingNavigator)).BeginInit();
-            this.blogBindingNavigator.SuspendLayout();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.blogDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blogBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // blogBindingNavigator
-            // 
-            this.blogBindingNavigator.AddNewItem = null;
-            this.blogBindingNavigator.BindingSource = this.blogBindingSource;
-            this.blogBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.blogBindingNavigator.DeleteItem = null;
-            this.blogBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.blogBindingNavigatorSaveItem});
-            this.blogBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.blogBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.blogBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.blogBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.blogBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.blogBindingNavigator.Name = "blogBindingNavigator";
-            this.blogBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.blogBindingNavigator.Size = new System.Drawing.Size(859, 25);
-            this.blogBindingNavigator.TabIndex = 0;
-            this.blogBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // blogBindingNavigatorSaveItem
-            // 
-            this.blogBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.blogBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("blogBindingNavigatorSaveItem.Image")));
-            this.blogBindingNavigatorSaveItem.Name = "blogBindingNavigatorSaveItem";
-            this.blogBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.blogBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // blogDataGridView
             // 
@@ -175,12 +64,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.blogDataGridView.DataSource = this.blogBindingSource;
-            this.blogDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.blogDataGridView.Location = new System.Drawing.Point(12, 28);
             this.blogDataGridView.Name = "blogDataGridView";
             this.blogDataGridView.ReadOnly = true;
+            this.blogDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.blogDataGridView.Size = new System.Drawing.Size(343, 240);
             this.blogDataGridView.TabIndex = 1;
-            this.blogDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.blogDataGridView_CellContentClick);
             // 
             // postsBindingSource
             // 
@@ -198,22 +87,70 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.postsDataGridView.DataSource = this.postsBindingSource;
-            this.postsDataGridView.Location = new System.Drawing.Point(349, 28);
+            this.postsDataGridView.Location = new System.Drawing.Point(361, 28);
             this.postsDataGridView.Name = "postsDataGridView";
             this.postsDataGridView.ReadOnly = true;
+            this.postsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.postsDataGridView.Size = new System.Drawing.Size(344, 240);
             this.postsDataGridView.TabIndex = 2;
-            this.postsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.postsDataGridView_CellContentClick);
             // 
-            // addPost
+            // addPostButton
             // 
-            this.addPost.Location = new System.Drawing.Point(491, 274);
-            this.addPost.Name = "addPost";
-            this.addPost.Size = new System.Drawing.Size(75, 23);
-            this.addPost.TabIndex = 3;
-            this.addPost.Text = "addPost";
-            this.addPost.UseVisualStyleBackColor = true;
-            this.addPost.Click += new System.EventHandler(this.addPost_Click);
+            this.addPostButton.Location = new System.Drawing.Point(361, 274);
+            this.addPostButton.Name = "addPostButton";
+            this.addPostButton.Size = new System.Drawing.Size(75, 23);
+            this.addPostButton.TabIndex = 3;
+            this.addPostButton.Text = "Add Post";
+            this.addPostButton.UseVisualStyleBackColor = true;
+            this.addPostButton.Click += new System.EventHandler(this.addPost_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 413);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // getAllPostsButton
+            // 
+            this.getAllPostsButton.Location = new System.Drawing.Point(442, 274);
+            this.getAllPostsButton.Name = "getAllPostsButton";
+            this.getAllPostsButton.Size = new System.Drawing.Size(112, 23);
+            this.getAllPostsButton.TabIndex = 5;
+            this.getAllPostsButton.Text = "Show All Posts";
+            this.getAllPostsButton.UseVisualStyleBackColor = true;
+            this.getAllPostsButton.Click += new System.EventHandler(this.getAllPosts_Click);
+            // 
+            // postLabel
+            // 
+            this.postLabel.AutoSize = true;
+            this.postLabel.Location = new System.Drawing.Point(361, 9);
+            this.postLabel.Name = "postLabel";
+            this.postLabel.Size = new System.Drawing.Size(50, 13);
+            this.postLabel.TabIndex = 6;
+            this.postLabel.Text = "All Posts:";
+            // 
+            // getBlogPostsButton
+            // 
+            this.getBlogPostsButton.Location = new System.Drawing.Point(12, 303);
+            this.getBlogPostsButton.Name = "getBlogPostsButton";
+            this.getBlogPostsButton.Size = new System.Drawing.Size(156, 23);
+            this.getBlogPostsButton.TabIndex = 7;
+            this.getBlogPostsButton.Text = "Get Posts for selected Blog";
+            this.getBlogPostsButton.UseVisualStyleBackColor = true;
+            this.getBlogPostsButton.Click += new System.EventHandler(this.getPostsForSelectedBlog_Click);
+            // 
+            // blogLabel
+            // 
+            this.blogLabel.AutoSize = true;
+            this.blogLabel.Location = new System.Drawing.Point(9, 9);
+            this.blogLabel.Name = "blogLabel";
+            this.blogLabel.Size = new System.Drawing.Size(36, 13);
+            this.blogLabel.TabIndex = 8;
+            this.blogLabel.Text = "Blogs:";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -261,32 +198,40 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // button1
+            // searchBox
             // 
-            this.button1.Location = new System.Drawing.Point(237, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.refresh_Click);
+            this.searchBox.Location = new System.Drawing.Point(174, 274);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(181, 20);
+            this.searchBox.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Search for blog by name:";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.search_Click);
             // 
             // BlogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 460);
+            this.ClientSize = new System.Drawing.Size(719, 460);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.searchBox);
+            this.Controls.Add(this.blogLabel);
+            this.Controls.Add(this.getBlogPostsButton);
+            this.Controls.Add(this.postLabel);
+            this.Controls.Add(this.getAllPostsButton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.addPost);
+            this.Controls.Add(this.addPostButton);
             this.Controls.Add(this.postsDataGridView);
             this.Controls.Add(this.blogDataGridView);
-            this.Controls.Add(this.blogBindingNavigator);
             this.Name = "BlogForm";
             this.Text = "BlogForm";
-            this.Load += new System.EventHandler(this.BlogForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.blogBindingNavigator)).EndInit();
-            this.blogBindingNavigator.ResumeLayout(false);
-            this.blogBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blogDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsDataGridView)).EndInit();
@@ -299,17 +244,6 @@
         #endregion
 
         private System.Windows.Forms.BindingSource blogBindingSource;
-        private System.Windows.Forms.BindingNavigator blogBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton blogBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView blogDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -319,7 +253,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Button addPost;
+        private System.Windows.Forms.Button addPostButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button getAllPostsButton;
+        private System.Windows.Forms.Label postLabel;
+        private System.Windows.Forms.Button getBlogPostsButton;
+        private System.Windows.Forms.Label blogLabel;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Button button2;
     }
 }

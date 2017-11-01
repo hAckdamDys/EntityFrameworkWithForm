@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,10 @@ namespace Bazy2
     public partial class BlogForm : Form
     {
         BlogContext _context;
+        private int selectedBlogId = 0;
+        private string selectedBlogName = "";
+        private string nameToSearch = "";
+        bool takeAllPosts = true;
         public BlogForm()
         {
             InitializeComponent();
@@ -23,6 +28,8 @@ namespace Bazy2
         {
             base.OnLoad(e);
             _context = new BlogContext();
+            //selectedBlogPosts = _context.Posts.Local.ToBindingList();
+           // postsDataGridView.DataSource = _context.Posts.ToList();
             this.refresh_Click(null, e);
         }
 
@@ -32,17 +39,7 @@ namespace Bazy2
             base.OnClosing(e);
             this._context.Dispose();
         }
-
-        private void BlogForm_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void blogDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void addPost_Click(object sender, EventArgs e)
         {
@@ -52,19 +49,58 @@ namespace Bazy2
 
         }
 
-        private void postsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void refresh_Click(object sender, EventArgs e)
         {
-            _context.Blogs.Load();
-            _context.Posts.Load();
-            this.blogBindingSource.DataSource =
-                _context.Blogs.Local.ToBindingList();
-            this.postsBindingSource.DataSource =
-                _context.Posts.Local.ToBindingList();
+            IQueryable<Blog> blogs = _context.Blogs;
+            if (nameToSearch != "")
+            {
+                blogs = from b in blogs
+                        where b.Name.Contains(nameToSearch)
+                        select b;
+                //blogs = blogs.Where(b => b.Name.Contains(nameToSearch));
+            }
+            blogDataGridView.DataSource = blogs.ToList();
+            blogDataGridView.Update();
+            if (takeAllPosts)
+            {
+                postsDataGridView.DataSource = _context.Posts.ToList();
+            }
+            else
+            {
+                Blog blog = _context.Blogs.Include("Posts").Where(b => b.BlogId == selectedBlogId).FirstOrDefault();
+                postsDataGridView.DataSource = blog.Posts;
+            }
+            postsDataGridView.Update();
+        }
+
+
+        private void getAllPosts_Click(object sender, EventArgs e)
+        {
+            takeAllPosts = true;
+            refresh_Click(sender, e);
+            postLabel.Text = "All Posts:";
+        }
+
+        private void getSelectedBlog()
+        {
+            var selectedRows = blogDataGridView.SelectedRows;
+            selectedBlogId = int.Parse(selectedRows[0].Cells[0].FormattedValue.ToString());
+            selectedBlogName = selectedRows[0].Cells[1].FormattedValue.ToString();
+        }
+
+        private void getPostsForSelectedBlog_Click(object sender, EventArgs e)
+        {
+            getSelectedBlog();
+            takeAllPosts = false;
+            this.refresh_Click(sender, e);
+            postLabel.Text = "Posts for blog " + selectedBlogName + ":";
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            nameToSearch = searchBox.Text.ToString();
+            refresh_Click(sender,e);
         }
     }
 }

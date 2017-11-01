@@ -14,7 +14,7 @@ namespace Bazy2
             using (var db = new BlogContext())
             {
                 // Create and save a new Blog 
-                Console.Write("Enter a title and content for a new Post: ");
+                /*Console.Write("Enter a title and content for a new Post: ");
                 var title = Console.ReadLine();
                 var content = Console.ReadLine();
 
@@ -34,12 +34,13 @@ namespace Bazy2
                     Console.WriteLine(item.Content);
                     Console.WriteLine("________________");
                 }
-
                 Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+                */
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new BlogForm());
-                //Console.ReadKey();
+                
             }
         }
     }

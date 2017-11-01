@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.blogLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -46,15 +46,14 @@
             this.comboBox1.Size = new System.Drawing.Size(242, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // label1
+            // blogLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Choose Blog:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.blogLabel.AutoSize = true;
+            this.blogLabel.Location = new System.Drawing.Point(12, 9);
+            this.blogLabel.Name = "blogLabel";
+            this.blogLabel.Size = new System.Drawing.Size(70, 13);
+            this.blogLabel.TabIndex = 1;
+            this.blogLabel.Text = "Choose Blog:";
             // 
             // label2
             // 
@@ -80,7 +79,6 @@
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Content:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // richTextBox1
             // 
@@ -90,38 +88,38 @@
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Location = new System.Drawing.Point(58, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addButton.Location = new System.Drawing.Point(58, 255);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 7;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.add_Click);
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(150, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cancelButton.Location = new System.Drawing.Point(150, 255);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 8;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancel_Click);
             // 
             // AddPostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 304);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.blogLabel);
             this.Controls.Add(this.comboBox1);
             this.Name = "AddPostForm";
             this.Text = "AddPost";
@@ -134,12 +132,12 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label blogLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
